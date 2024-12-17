@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dynamic Checkout</title>
+        <title>Stripe Laravel Gateway</title>
         <script src="https://js.stripe.com/v3/"></script>
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 <body class="bg-gray-100 flex justify-center items-center h-screen">
@@ -16,9 +18,13 @@
 
         <form id="payment-form" class="space-y-4">
             <!-- Input Field -->
-            <div>
+            <div class="relative">
+                <!-- Dollar icon inside the input field -->
+                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
                 <input id="amount" type="number" min="1" placeholder="Enter amount" required
-                class="block w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:outline-none ">
+                    class="pl-8 pr-4 py-2 border border-gray-300 rounded-md text-sm shadow-sm w-full placeholder-gray-400 focus:ring-blue-500 focus:outline-none">
             </div>
 
             <!-- Stripe Card Element -->
